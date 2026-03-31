@@ -161,7 +161,7 @@ body {
 
 .theme-toggle {
   background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.3);
   color: white;
   padding: 0.625rem var(--spacing-md);
   border-radius: 8px;
@@ -173,16 +173,29 @@ body {
   justify-content: center;
   min-width: 44px;
   height: 44px;
+  font-weight: 500;
+  position: relative;
+}
+
+.theme-toggle i {
+  transition: transform var(--transition-fast), text-shadow var(--transition-fast);
 }
 
 .theme-toggle:hover {
   background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.08) rotate(10deg);
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+.theme-toggle:hover i {
+  transform: scale(1.2);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
 .theme-toggle:active {
-  transform: scale(0.95) rotate(10deg);
+  transform: scale(0.95);
+  background: rgba(255, 255, 255, 0.25);
+}
 }
 
 .main {
@@ -824,12 +837,24 @@ section {
   }
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    box-shadow: 0 4px 20px rgba(79, 70, 229, 0.4);
+  }
+}
+
+@keyframes pressDown {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.96);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -847,7 +872,7 @@ section {
 
 /* Hover animations for interactive elements */
 .btn:active {
-  animation: spin 0.3s ease-in-out;
+  animation: pressDown 0.2s ease-out;
 }
 
 /* ============================================

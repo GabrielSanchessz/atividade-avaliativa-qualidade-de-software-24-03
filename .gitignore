@@ -1,1 +1,7 @@
 24_03 - Atividade Avaliativa 1.docx
+
+node_modules/
+.DS_Store
+*.log
+coverage/
+.env
