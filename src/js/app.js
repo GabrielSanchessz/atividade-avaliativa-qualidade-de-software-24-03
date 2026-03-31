@@ -3,6 +3,8 @@
  * Ponto de entrada da aplicação - orquestra a inicialização
  */
 
+/* global TodoManager, UI */
+
 // Aguarda o DOM estar pronto
 document.addEventListener('DOMContentLoaded', () => {
   try {

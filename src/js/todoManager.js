@@ -21,7 +21,7 @@ class TodoManager {
    * @returns {number} Próximo ID disponível
    */
   _calculateNextId() {
-    if (this.todos.length === 0) return 1;
+    if (this.todos.length === 0) {return 1;}
     return Math.max(...this.todos.map((todo) => todo.id)) + 1;
   }
 
@@ -171,13 +171,13 @@ class TodoManager {
    */
   getTodosByFilter(filter = 'all') {
     switch (filter) {
-      case 'active':
-        return this.todos.filter((todo) => !todo.completed);
-      case 'completed':
-        return this.todos.filter((todo) => todo.completed);
-      case 'all':
-      default:
-        return [...this.todos];
+    case 'active':
+      return this.todos.filter((todo) => !todo.completed);
+    case 'completed':
+      return this.todos.filter((todo) => todo.completed);
+    case 'all':
+    default:
+      return [...this.todos];
     }
   }
 

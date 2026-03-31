@@ -199,10 +199,10 @@ class UI {
    */
   _handleEditTodo(id) {
     const todo = this.todoManager._findTodoById(id);
-    if (!todo) return;
+    if (!todo) {return;}
 
     const newTitle = prompt('Editar tarefa:', todo.title);
-    if (newTitle === null) return;
+    if (newTitle === null) {return;}
 
     try {
       this.todoManager.updateTodo(id, newTitle);
