@@ -106,7 +106,30 @@ npm run dev
 
 A aplicação será acessível em `http://localhost:8000`
 
-## 💡 Como Usar
+## � Desenvolvimento em Tempo Real
+
+Para ver suas mudanças refletidas **instantaneamente** enquanto programa:
+
+```bash
+# Servidor com hot reload automático
+npm run live
+```
+
+Isso vai:
+- ✅ Iniciar servidor na porta **8080**
+- ✅ **Abrir no navegador** automaticamente
+- ✅ **Recarregar** quando você salva qualquer arquivo
+- ✅ **Preservar dados** (localStorage continua funcionando)
+
+**Exemplo:**
+1. Execute `npm run live`
+2. Edite `src/css/styles.css` (mude uma cor, por exemplo)
+3. Salve o arquivo (Ctrl+S)
+4. **Veja a mudança aparecer instantaneamente no navegador!**
+
+Para mais detalhes, veja [LIVE_DEVELOPMENT.md](./LIVE_DEVELOPMENT.md)
+
+## �💡 Como Usar
 
 ### Adicionar Tarefa
 
