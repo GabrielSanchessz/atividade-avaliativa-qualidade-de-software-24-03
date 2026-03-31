@@ -9,19 +9,43 @@ Uma aplicação web moderna e responsiva para gerenciamento de tarefas com persi
 - ✅ **Filtros Avançados** - Visualizar todas, apenas ativas ou concluídas
 - ✅ **Estatísticas em Tempo Real** - Total, pendentes e concluídas
 - ✅ **Modo Escuro** - Toggle de tema persistente
-- ✅ **Testes Automatizados** - +30 testes unitários com Jest
+- ✅ **Design Profissional** - Ícones Font Awesome 6.5.1, animações suaves
+- ✅ **Testes Automatizados** - 62 testes unitários com Jest (80%+ cobertura)
 - ✅ **Pipeline CI/CD** - Integração contínua com GitHub Actions
 - ✅ **Deploy Automático** - GitHub Pages
 - ✅ **Acessibilidade** - WCAG 2.1 compliant
-- ✅ **Responsivo** - Mobile-first design
+- ✅ **Responsivo** - Mobile-first design (480px, 640px breakpoints)
+
+## 🎨 Design & Ícones
+
+A aplicação utiliza **Font Awesome 6.5.1** para um design profissional e polido:
+
+- 📋 **fa-tasks** - Ícone do header
+- ➕ **fa-plus** - Botão de adicionar
+- ✏️ **fa-edit** - Button de editar (azul)
+- 🗑️ **fa-trash-alt** - Botão de deletar (vermelho)
+- 🌙/☀️ **fa-moon/fa-sun** - Toggle de tema
+- 📊 **fa-list, fa-hourglass-half, fa-check-circle** - Estatísticas
+- 🔍 **fa-filter** - Filtro
+- 📮 **fa-inbox** - Estado vazio
+- 🧹/🗑️ **fa-broom/fa-trash-alt** - Ações em massa
+
+**Melhorias Visuais:**
+- Gradiente aprimorado no header
+- Animações suaves (hover, slide, float)
+- Shadow effects contextuais
+- Transições rápidas e responsivas
+- Efeitos de ripple nos botões
+- Iconts coloridos com diferentes contextos
 
 ## 🏗️ Arquitetura
 
 ### Stack Tecnológico
 
 - **Frontend**: HTML5, CSS3, JavaScript ES6+
-- **Testes**: Jest + JavaScript
-- **CI/CD**: GitHub Actions
+- **Ícones**: Font Awesome 6.5.1 via CDN
+- **Testes**: Jest + JavaScript (62 testes)
+- **CI/CD**: GitHub Actions (5 jobs)
 - **Persistência**: localStorage
 - **Deploy**: GitHub Pages
 
@@ -29,10 +53,10 @@ Uma aplicação web moderna e responsiva para gerenciamento de tarefas com persi
 
 ```
 projeto/
-├── index.html                          # Página principal
+├── index.html                          # Página principal com ícones FA
 ├── src/
 │   ├── css/
-│   │   └── styles.css                 # Estilos (400+ linhas, modular)
+│   │   └── styles.css                 # Estilos profissionais (1000+ linhas)
 │   └── js/
 │       ├── todoManager.js             # Lógica de negócio (180+ linhas)
 │       ├── storage.js                 # Persistência (150+ linhas)
@@ -40,9 +64,9 @@ projeto/
 │       └── app.js                     # Orquestração (40 linhas)
 ├── tests/
 │   ├── todoManager.test.js            # 30+ testes
-│   └── storage.test.js                # 25+ testes
+│   └── storage.test.js                # 32+ testes
 ├── .github/workflows/
-│   └── ci.yml                         # Pipeline CI/CD
+│   └── ci.yml                         # Pipeline CI/CD (5 jobs)
 ├── docs/
 │   ├── ARCHITECTURE.md                # Detalhes arquitetura
 │   ├── TESTING.md                     # Guia de testes
@@ -50,7 +74,7 @@ projeto/
 │   └── DEPLOYMENT.md                  # Guia deploy
 ├── package.json                       # Dependências e scripts
 ├── jest.config.js                     # Configuração Jest
-├── .eslintrc.json                     # Configuração ESLint
+├── .eslintrc.json                     # Configuração ESLint (strict)
 ├── .prettierrc.json                   # Configuração Prettier
 └── README.md                          # Este arquivo
 ```
@@ -87,14 +111,14 @@ A aplicação será acessível em `http://localhost:8000`
 ### Adicionar Tarefa
 
 1. Digite sua tarefa no campo de input
-2. Pressione Enter ou clique no botão "Adicionar"
+2. Pressione Enter ou clique no botão "Adicionar" (com ícone ➕)
 3. A tarefa aparecerá na lista
 
 ### Gerenciar Tarefas
 
 - **Marcar como Concluída**: Clique no checkbox
-- **Editar**: Clique no botão ✏️ (abre modal de edição)
-- **Deletar**: Clique no botão 🗑️ (pede confirmação)
+- **Editar**: Clique no botão 🔵 (ícone azul de edição)
+- **Deletar**: Clique no botão 🔴 (ícone vermelho de lixeira)
 
 ### Filtrar
 
