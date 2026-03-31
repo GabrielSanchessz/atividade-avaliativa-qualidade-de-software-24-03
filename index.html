@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Aplicação To-Do List com persistência e sincronização em tempo real" />
+    <title>To-Do List | Gerenciador de Tarefas</title>
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3H5NxKLo0nTv2x60nWWtqOqzVTl4qByEAZdiUmSKlghvWsS0rMjw0Z5K+7+jzIIsRPEAAOYNHb2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="src/css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-content">
+          <div class="header-left">
+            <i class="fas fa-tasks header-icon"></i>
+            <h1 class="header-title">Minhas Tarefas</h1>
+          </div>
+          <button
+            id="themeToggle"
+            class="theme-toggle"
+            title="Alternar tema"
+            aria-label="Alternar entre tema claro e escuro"
+          >
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main">
+        <!-- Input Section -->
+        <section class="input-section">
+          <form id="todoForm" class="todo-form" novalidate>
+            <div class="input-wrapper">
+              <i class="fas fa-pen input-icon"></i>
+              <input
+                id="todoInput"
+                type="text"
+                class="todo-input"
+                placeholder="Adicione uma nova tarefa..."
+                autocomplete="off"
+                maxlength="100"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-add">
+              <i class="fas fa-plus"></i>
+              <span>Adicionar</span>
+            </button>
+          </form>
+          <p id="errorMessage" class="error-message" role="alert"></p>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section" aria-live="polite" aria-atomic="true">
+          <div class="stats-container">
+            <div class="stat">
+              <div class="stat-icon-wrapper">
+                <i class="fas fa-list"></i>
+              </div>
+              <span class="stat-value" id="totalCount">0</span>
+              <span class="stat-label">Total</span>
+            </div>
+            <div class="stat">
+              <div class="stat-icon-wrapper">
+                <i class="fas fa-hourglass-half"></i>
+              </div>
+              <span class="stat-value" id="pendingCount">0</span>
+              <span class="stat-label">Pendentes</span>
+            </div>
+            <div class="stat">
+              <div class="stat-icon-wrapper">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <span class="stat-value" id="completedCount">0</span>
+              <span class="stat-label">Concluídas</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+          <div class="filter-wrapper">
+            <i class="fas fa-filter filter-icon"></i>
+            <select id="filterSelect" class="filter-select">
+              <option value="all">Todas as tarefas</option>
+              <option value="active">Tarefas Pendentes</option>
+              <option value="completed">Tarefas Concluídas</option>
+            </select>
+          </div>
+        </section>
+
+        <!-- Todo List -->
+        <section class="todos-section">
+          <ul id="todoList" class="todo-list" role="list">
+            <!-- Tarefas serão inseridas aqui dinamicamente -->
+          </ul>
+          <div id="emptyState" class="empty-state">
+            <i class="fas fa-inbox empty-icon"></i>
+            <p>Nenhuma tarefa a exibir. Comece adicionando uma nova!</p>
+          </div>
+        </section>
+
+        <!-- Actions Section -->
+        <section class="actions-section">
+          <button id="clearCompleted" class="btn btn-secondary">
+            <i class="fas fa-broom"></i>
+            <span>Limpar Concluídas</span>
+          </button>
+          <button id="clearAll" class="btn btn-danger">
+            <i class="fas fa-trash-alt"></i>
+            <span>Limpar Tudo</span>
+          </button>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          To-Do List &copy; 2026 | Atividade Avaliativa - Qualidade de Software
+        </p>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="src/js/todoManager.js"></script>
+    <script src="src/js/storage.js"></script>
+    <script src="src/js/ui.js"></script>
+    <script src="src/js/app.js"></script>
+  </body>
+</html>

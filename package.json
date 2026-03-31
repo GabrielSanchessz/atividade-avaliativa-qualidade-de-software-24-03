@@ -1,0 +1,32 @@
+{
+  "name": "todo-list-app",
+  "version": "1.0.0",
+  "description": "Aplicação To-Do List com persistência local e testes automatizados",
+  "main": "src/js/app.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/js/",
+    "lint:fix": "eslint src/js/ --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "build": "echo 'Build complete - static site ready'",
+    "dev": "python3 -m http.server 8000 --directory ."
+  },
+  "keywords": [
+    "todo",
+    "task management",
+    "quality assurance",
+    "testing"
+  ],
+  "author": "Gabriel Sanches & Developer",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "eslint": "^8.50.0",
+    "prettier": "^3.0.3",
+    "@testing-library/jest-dom": "^6.1.4"
+  }
+}
